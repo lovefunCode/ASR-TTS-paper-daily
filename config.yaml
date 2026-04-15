@@ -1,0 +1,36 @@
+# TODO: add papers by configuration file
+base_url: "https://arxiv.paperswithcode.com/api/v0/papers/"
+user_name: "halsay"
+repo_name: "ASR-TTS-paper-daily"
+show_authors: True
+show_links: True
+show_badge: False
+max_results: 100
+
+# 是否在表格中查询 Semantic Scholar 被引次数（需联网；新稿常显示为 —）
+# 无 API key 时全量跑 max_results 较大可能较慢；遇 429 可设置环境变量 SEMANTIC_SCHOLAR_API_KEY
+fetch_citations: true
+
+# 仅保留 Semantic Scholar 被引次数 >= 该值的论文；0 表示不过滤。
+# 「多于 10 次」填 11；「至少 10 次」填 10。启用后即使 fetch_citations 为 false 也会去查 S2 以便过滤。
+min_citations: 0
+
+publish_readme: True
+publish_gitpage: True
+publish_wechat: False
+
+# file paths
+json_readme_path: './docs/asr-arxiv-daily.json'
+json_gitpage_path: './docs/asr-arxiv-daily-web.json'
+json_wechat_path: './docs/asr-arxiv-daily-wechat.json'
+
+md_readme_path: 'README.md'
+md_gitpage_path: './docs/index.md'
+md_wechat_path: './docs/wechat.md'
+
+# keywords to search
+keywords:
+    "ASR":
+        filters: ["ASR", "Speech Recognition"]
+    "TTS":
+        filters: ["TTS", "Text to speech", "Speech Synthesis"]
